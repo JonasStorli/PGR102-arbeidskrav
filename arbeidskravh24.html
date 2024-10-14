@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arbeidskrav PGR102</title>
+    <link rel="stylesheet" href="arbeidskrav.css" />
+  </head>
+  <!-- HTML KODEN TRENGER DU IKKE RØRE FOR Å LØSE OPPGAVENE. DU SKAL KUN KODE I SCRIPT -->
+
+  <body>
+    <div class="main-container">
+      <div class="hero-health-containers">
+        <div class="healthbar-container">
+          <!-- healer-health sin vidde må forandres for å endre lifebar -->
+          <div id="healer-health" class="healthbar"></div>
+          <div class="text-container">
+            <!-- Disse må forandres på for å endre på navn og HP -->
+            <p id="healer-name-txt">Healerens navn</p>
+            <p id="healer-health-txt">400 / 400 HP</p>
+          </div>
+        </div>
+        <div class="healthbar-container">
+          <!-- archer-health sin vidde må forandres for å endre lifebar -->
+          <div id="archer-health" class="healthbar"></div>
+          <div class="text-container">
+            <!-- Disse må forandres på for å endre på navn og HP -->
+            <p id="archer-name-txt">Archerens navn</p>
+            <p id="archer-health-txt">600 / 600 HP</p>
+          </div>
+        </div>
+        <div class="healthbar-container">
+          <!-- warrior-health sin vidde må forandres for å endre lifebar -->
+          <div id="warrior-health" class="healthbar"></div>
+          <div class="text-container">
+            <!-- Disse må forandres på for å endre på navn og HP -->
+            <p id="warrior-name-txt">Warriorens navn</p>
+            <p id="warrior-health-txt">800 / 800 HP</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Healthbar til fienden -->
+      <div class="dragon-health-container">
+        <div class="healthbar-container">
+          <!-- dragon-health sin vidde må forandres for å endre lifebar -->
+          <div id="dragon-health" class="healthbar"></div>
+          <div class="text-container">
+            <!-- Disse må forandres på for å endre på navn og HP -->
+            <p id="dragon-name-txt">Dragens navn</p>
+            <div id="dragon-health-txt" class="text-container">
+              2000 / 2000 HP
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bildecontainere for heroene. Disse bilde-containerne skal kunne trykkes på  -->
+      <div id="healer" class="img-container">
+        <img class="hero" src="assets/healer.png" />
+      </div>
+      <div id="archer" class="img-container">
+        <img class="hero" src="assets/archer.png" />
+      </div>
+      <div id="warrior" class="img-container">
+        <img class="hero" src="assets\warrior.png" />
+      </div>
+
+      <!-- Bildecontainer for fienden -->
+      <div id="dragon" class="img-container">
+        <img id="dragon-img" src="assets\dragon.png" />
+      </div>
+    </div>
+    <script>
+      //Denne JS-koden er laget klar for deg. Den trenger du ikke endre på. :-)
+      //Stats for heroes: Du må ikke bruke alle stats videre i programmet ditt hvis du ikke ser det nødvendig.
+      //Husk at for å hente ut noe fra et objekt som er i et array kan vi skrive for eksempel slik: heroesArray[1].name (Ariana Archer)
+
+      let heroesArray = [
+        {
+          id: 0,
+          name: "Henriette Healer",
+          maxHP: 400,
+          currentHP: 400,
+          damage: 100,
+          alive: true,
+        },
+        {
+          id: 1,
+          name: "Ariana archer",
+          maxHP: 600,
+          currentHP: 600,
+          damage: 400,
+          alive: true,
+        },
+        {
+          id: 2,
+          name: "Wyona Warrior",
+          maxHP: 800,
+          currentHP: 800,
+          damage: 400,
+          alive: true,
+        },
+      ];
+
+      let dragonStats = {
+        name: "Daar Dragon",
+        maxHP: 2000,
+        currentHP: 2000,
+        damage: 200,
+        alive: true,
+      };
+
+      //Bildene som skal kunne trykkes på
+      const healer = document.getElementById("healer");
+      const archer = document.getElementById("archer");
+      const warrior = document.getElementById("warrior");
+
+      const dragon = document.getElementById("dragon");
+
+      //Navnene til heltene og dragen som kan oppdateres med riktig navn (tilleggsfunksjonalitet)
+      const healerName = document.getElementById("healer-name-txt");
+      const archerName = document.getElementById("archer-name-txt");
+      const warriorName = document.getElementById("warrior-name-txt");
+
+      const dragonName = document.getElementById("dragon-name-txt");
+
+      //HP-tekstene til heltene som skal kunne oppdatere seg (tilleggsfunksjonalitet)
+      const healerHealthTxt = document.getElementById("healer-health-txt");
+      const archerHealthTxt = document.getElementById("archer-health-txt");
+      const warriorHealthTxt = document.getElementById("warrior-health-txt");
+
+      //HP-teksten til dragen som kan oppdatere seg (tilleggsfunksjonalitet)
+      const dragonHealthTxt = document.getElementById("dragon-health-txt");
+
+      //Healthbars som må oppdateres for at grønnfargen skal bli mindre når HP blir mindre (tilleggsfunksjonalitet)
+      const healerHealthBar = document.getElementById("healer-health");
+      const archerHealthBar = document.getElementById("archer-health");
+      const warriorHealthBar = document.getElementById("warrior-health");
+
+      const dragonHealthBar = document.getElementById("dragon-health");
+
+      //Her kommer din kode! :o
+    </script>
+  </body>
+</html>

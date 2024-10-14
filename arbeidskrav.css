@@ -1,0 +1,97 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(27, 33, 44);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+}
+
+.main-container {
+  border: 1px solid black;
+  width: 1366px;
+  height: 768px;
+  background-image: url("assets/background-img.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-health-containers {
+  position: relative;
+  left: 1%;
+}
+
+.dragon-health-container {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  z-index: 1;
+}
+
+.healthbar-container {
+  margin-top: 10px;
+  width: 300px;
+  height: 50px;
+  border: 2px solid black;
+}
+
+.healthbar {
+  position: absolute;
+  height: 50px;
+  background-color: rgb(121, 192, 121);
+}
+
+#healer-health,
+#archer-health,
+#warrior-health,
+#dragon-health {
+  width: 300px;
+}
+
+.text-container {
+  position: relative;
+  z-index: 2;
+}
+
+.img-container {
+  position: absolute;
+}
+
+.img-container:hover img {
+  transform: scale(1.1);
+}
+
+#healer {
+  bottom: 5%;
+  left: 3%;
+}
+
+#archer {
+  left: 13%;
+  bottom: 15%;
+}
+
+#warrior {
+  bottom: 5%;
+  left: 25%;
+}
+
+.hero {
+  height: 250px;
+}
+
+#dragon {
+  bottom: 10%;
+  right: 5%;
+}
+
+#dragon-img {
+  height: 700px;
+}
