@@ -1,17 +1,42 @@
 // Function to update the health bars and health text
 function updateHealthBars() {
-    // Update health bar width and ensure HP doesn't go below zero
-    healerHealthBar.style.width = Math.max((heroesArray[0].currentHP / heroesArray[0].maxHP) * 300, 0) + 'px';
-    archerHealthBar.style.width = Math.max((heroesArray[1].currentHP / heroesArray[1].maxHP) * 300, 0) + 'px';
-    warriorHealthBar.style.width = Math.max((heroesArray[2].currentHP / heroesArray[2].maxHP) * 300, 0) + 'px';
-    dragonHealthBar.style.width = Math.max((dragonStats.currentHP / dragonStats.maxHP) * 300, 0) + 'px';
+  // Update health bar width and ensure HP doesn't go below zero
+  healerHealthBar.style.width = Math.max((heroesArray[0].currentHP / heroesArray[0].maxHP) * 300, 0) + 'px';
+  archerHealthBar.style.width = Math.max((heroesArray[1].currentHP / heroesArray[1].maxHP) * 300, 0) + 'px';
+  warriorHealthBar.style.width = Math.max((heroesArray[2].currentHP / heroesArray[2].maxHP) * 300, 0) + 'px';
+  dragonHealthBar.style.width = Math.max((dragonStats.currentHP / dragonStats.maxHP) * 300, 0) + 'px';
+
+  // Update health text
+  healerHealthTxt.textContent = `${heroesArray[0].currentHP} / ${heroesArray[0].maxHP} HP`;
+  archerHealthTxt.textContent = `${heroesArray[1].currentHP} / ${heroesArray[1].maxHP} HP`;
+  warriorHealthTxt.textContent = `${heroesArray[2].currentHP} / ${heroesArray[2].maxHP} HP`;
+  dragonHealthTxt.textContent = `${dragonStats.currentHP} / ${dragonStats.maxHP} HP`;
+
+  // Hide heroes or dragon if they are dead
+  if (heroesArray[0].currentHP <= 0) {
+      document.getElementById('healer').style.display = 'none'; // Hide healer
+  } else {
+      document.getElementById('healer').style.display = 'block'; // Show healer if alive
+  }
   
-    // Update health text
-    healerHealthTxt.textContent = `${heroesArray[0].currentHP} / ${heroesArray[0].maxHP} HP`;
-    archerHealthTxt.textContent = `${heroesArray[1].currentHP} / ${heroesArray[1].maxHP} HP`;
-    warriorHealthTxt.textContent = `${heroesArray[2].currentHP} / ${heroesArray[2].maxHP} HP`;
-    dragonHealthTxt.textContent = `${dragonStats.currentHP} / ${dragonStats.maxHP} HP`;
-  
+  if (heroesArray[1].currentHP <= 0) {
+      document.getElementById('archer').style.display = 'none'; // Hide archer
+  } else {
+      document.getElementById('archer').style.display = 'block'; // Show archer if alive
+  }
+
+  if (heroesArray[2].currentHP <= 0) {
+      document.getElementById('warrior').style.display = 'none'; // Hide warrior
+  } else {
+      document.getElementById('warrior').style.display = 'block'; // Show warrior if alive
+  }
+
+  if (dragonStats.currentHP <= 0) {
+      document.getElementById('dragon').style.display = 'none'; // Hide dragon
+  } else {
+      document.getElementById('dragon').style.display = 'block'; // Show dragon if alive
+  }
+
     // Function to update health bar color based on current health
     function updateHealthBarColor(healthBar, currentHP, maxHP) {
       const healthPercentage = currentHP / maxHP; // Calculate health percentage (0 to 1)
@@ -20,12 +45,12 @@ function updateHealthBars() {
       healthBar.style.backgroundColor = `rgb(${red}, ${green}, 0)`; // Set background color
     }
   
-    // Update health bar colors
+// Update health bar colors
     updateHealthBarColor(healerHealthBar, heroesArray[0].currentHP, heroesArray[0].maxHP);
     updateHealthBarColor(archerHealthBar, heroesArray[1].currentHP, heroesArray[1].maxHP);
     updateHealthBarColor(warriorHealthBar, heroesArray[2].currentHP, heroesArray[2].maxHP);
     updateHealthBarColor(dragonHealthBar, dragonStats.currentHP, dragonStats.maxHP);
-  }
+}
   
   // Function to show the reset button
   function showResetButton() {
